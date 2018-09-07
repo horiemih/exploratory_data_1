@@ -16,17 +16,17 @@ house3$Sub_metering_1 <-as.numeric(as.character(house3$Sub_metering_1))
 house3$sSub_metering_2 <-as.numeric(as.character(house3$Sub_metering_2))
 house3$Sub_metering_3 <-as.numeric(as.character(house3$Sub_metering_3))
 
-##Voltageplot
+##Voltage
 house3$Voltage <-as.numeric(as.character(house3$Voltage))
 
-##reactive plot
+##reactive 
 house3$Global_reactive_power <-as.numeric(as.character(house3$Global_reactive_power))
 housetoday <- cbind(house3, todaydate)
 housetoday$Date <- as.Date(housetoday$Date, format ="%d/%m/%Y")
 housetoday2 <- subset(housetoday, (Date == "2007-02-01" | Date == "2007-02-02"))
 housetoday2$DateTime <- as.POSIXct(paste(housetoday2$Date, housetoday2$Time), format="%Y-%m-%d %H:%M:%S")
 
-
+## create 4 plots
 png("C:\\Users\\Desktop\\corsera\\plot4.png ", width=480, height=480)
 par(mfrow=c(2,2))
 
