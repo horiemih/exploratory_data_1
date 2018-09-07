@@ -3,6 +3,7 @@ house <- read.table("C:\\Users\Desktop\\corsera\\household.txt", sep=";", header
 ## change text to csv file
 write.table(house, file ="C:\\Users\\Desktop\\corsera\\house3.csv", sep=",", quote=FALSE, row.names = FALSE, col.names = TRUE)
 house3<- read.csv("C:\\Users\\Desktop\\corsera\\house3.csv")	
+## look at date and global_active_power
 house3$Date <- as.Date(house3$Date, format ="%d/%m/%Y")
 house3$Global_active_power <-as.numeric(as.character(house3$Global_active_power))
 house5 <- subset(house3, (Date == "2007-02-01" | Date == "2007-02-02"))
